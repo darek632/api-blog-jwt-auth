@@ -1,0 +1,55 @@
+require("dotenv").config();
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const cors = require("cors");
+const passport = require("passport");
+require("./config/passport");   
+
+
+const authRouter = require("./routes/authRouter");
+const backendRouter = require("./routes/backendRouter");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(passport.initialize());
+
+
+// app.use((req, res, next) => { req.user = { id: 1 }; next(); }); 
+// for testing only, pretend every request is as 'user 1'
+// before it gets to router
+
+app.use(authRouter); 
+app.use(backendRouter);
+
+app.use((err, req, res, next) => {
+  if (err.code === "P2025") {
+    return res.status(404).json({ error: "Not found" });
+  }
+  console.error(err);
+  res.status(500).json({ error: "Something went wrong" });
+});
+
+
+
+
+app.get('/', (req, res) => {
+  return res.send('Received a GET HTTP method');
+});
+
+app.post('/', (req, res) => {
+  return res.send('Received a POST HTTP method');
+});
+
+app.put('/', (req, res) => {
+  return res.send('Received a PUT HTTP method');
+});
+
+app.delete('/', (req, res) => {
+  return res.send('Received a DELETE HTTP method');
+});
+
+app.listen(3000, () =>
+  console.log('Example app listening on port 3000! '),
+);

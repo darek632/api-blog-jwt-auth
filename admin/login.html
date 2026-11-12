@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Author login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/login.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <span class="logo">Hobbit's tales<span class="logo-tag">Author</span></span>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="auth-card">
+        <h1>Author login</h1>
+        <form id="login-form">
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" name="username" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <div id="form-status"></div>
+          <button type="submit" class="button">Log in</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

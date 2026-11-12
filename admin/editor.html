@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit post · Author</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/editor.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="site-header"></header>
+
+    <main class="container narrow">
+      <div class="page-heading">
+        <h1 id="page-title">Loading…</h1>
+        <a href="index.html">← Back to dashboard</a>
+      </div>
+
+      <div id="page-status"></div>
+      <div class="editor-actions" id="editor-actions" hidden></div>
+
+      <form id="post-form" hidden>
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" maxlength="200" required />
+        </div>
+        <div class="field">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="content-input" required></textarea>
+        </div>
+        <div id="form-status"></div>
+        <button type="submit" class="button" id="save-button">Save post</button>
+      </form>
+
+      <section class="comments" id="comments" aria-label="Comments" hidden></section>
+    </main>
+  </body>
+</html>
