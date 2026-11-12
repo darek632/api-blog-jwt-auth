@@ -1,8 +1,9 @@
 // Where your Express API is running
-export const API_URL = "http://localhost:3000";
+const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
 
+export const API_URL = isLocal ? "http://localhost:3000" : "https://your-api.onrender.com";
 // Where your reader site runs (used for "View on blog" links)
-export const READER_URL = "http://localhost:5173";
+export const READER_URL = isLocal ? "http://127.0.0.1:5500/reader" : "https://api-blog-jwt-auth-2.onrender.com"
 
 // ---------- token + user storage ----------
 
