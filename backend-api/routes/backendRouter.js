@@ -8,6 +8,9 @@ const { requireAuth, requireAuthor } = require("../middleware/auth");
 
 // const isAuth = require("../middleware/auth");
 
+//tester route to see if serve is live
+backendRouter.get("/", (req, res) => res.json({ status: "ok" }));
+
 
 // public reader routes
 
