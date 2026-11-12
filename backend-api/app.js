@@ -34,22 +34,21 @@ app.use((err, req, res, next) => {
 
 
 
-app.get('/', (req, res) => {
-  return res.send('Received a GET HTTP method');
-});
+// app.get('/', (req, res) => {
+//   return res.send('Received a GET HTTP method');
+// });
 
-app.post('/', (req, res) => {
-  return res.send('Received a POST HTTP method');
-});
+// app.post('/', (req, res) => {
+//   return res.send('Received a POST HTTP method');
+// });
 
-app.put('/', (req, res) => {
-  return res.send('Received a PUT HTTP method');
-});
+// app.put('/', (req, res) => {
+//   return res.send('Received a PUT HTTP method');
+// });
 
-app.delete('/', (req, res) => {
-  return res.send('Received a DELETE HTTP method');
-});
+// app.delete('/', (req, res) => {
+//   return res.send('Received a DELETE HTTP method');
+// });
 
-app.listen(3000, () =>
-  console.log('Example app listening on port 3000! '),
-);
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`API listening on port ${PORT}`));
