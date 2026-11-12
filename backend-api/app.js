@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://api-blog-jwt-auth-2.onrender.com",
-    "https://api-blog-jwt-auth.onrender.com",
+    "https://api-blog-jwt-auth-1.onrender.com",
     "http://127.0.0.1:5500",
     "http://localhost:5173",
     "http://localhost:5174",
