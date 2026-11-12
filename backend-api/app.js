@@ -11,7 +11,15 @@ const backendRouter = require("./routes/backendRouter");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://api-blog-jwt-auth-2.onrender.com",
+    "https://api-blog-jwt-auth.onrender.com",
+    "http://127.0.0.1:5500",
+    "http://localhost:5173",
+    "http://localhost:5174",
+  ]
+}));
 app.use(express.json());
 app.use(passport.initialize());
 
